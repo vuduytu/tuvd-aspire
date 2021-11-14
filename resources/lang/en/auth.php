@@ -1,0 +1,25 @@
+<?php
+return [
+    'login_success' => 'Login Success',
+    'login_fail' => 'Login Fail',
+    'created_success' => 'Created success',
+    'not_found' => 'Not found user',
+    'change_password_success' => 'Chage password success',
+    'phone_not_invalid' => 'The phone number is not valid, the phone number must be 10 digits, do not contain the first +84',
+    "name_not_allow" => 'Name must be string . Not include number, special character',
+    "phone_exist" => 'Phone already exist . Input another phone. ',
+    "update_password_fail" => 'Password not correct',
+    "address" => "Address",
+    "password_confirmation" => 're-password',
+    "password" => 'password',
+    "customer_phone" => 'Phone',
+    "customer_name" => 'Name',
+    "address_exist" => 'Address Exist',
+    "new_password" => 'New password',
+    "address_name" => 'Address Name',
+    "birthday" => 'Birthday',
+    "phone_can_login" => "Phone number already exists, do you want to login?",
+    "phone_cannot_login" => 'Phone number not exist, do you want register now ?',
+    "get_information_success" => "Get in formation user success",
+    'logout_success' => "Log out success"
+];

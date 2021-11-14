@@ -1,0 +1,25 @@
+<?php
+return [
+    'login_success' => 'Đăng nhập thành công',
+    'login_fail' => 'Tên đăng nhập hoặc mật khẩu không đúng',
+    'created_success' => 'Tạo tài khoản thành công',
+    'not_found' => 'Không tìm thấy tài khoản',
+    'change_password_success' => 'Thay đổi mật khẩu thành công',
+    'phone_not_invalid' => 'Số điện thoại không hợp lệ, số điện thoại phải 10 số, không chứa đầu +84',
+    'name_not_allow' => 'Trường tên phải là chữ. Không bao gồm các kí tự đặc biệt, số',
+    "phone_exist" => 'Số điện thoại đã tồn tại. Mời nhập sđt khác',
+    "update_password_fail" => "Mật khẩu không chính xác . ",
+    "address" => "Địa chỉ",
+    "password_confirmation" => 'nhập lại mật khẩu',
+    "password" => 'Mật khẩu',
+    "customer_phone" => 'Điện thoại',
+    "customer_name" => 'Tên',
+    "address_exist" => 'Địa chỉ đã tồn tại',
+    "new_password" => 'Mật khẩu mới',
+    "address_name" => 'Thông tin địa chỉ',
+    "birthday" => 'Ngày sinh',
+    "phone_can_login" => "Số điện thoại đã tồn tại, bạn có muốn đăng nhập không?",
+    "phone_cannot_login" => 'Số điện thoại chưa tồn tại, bạn có muốn đăng ký không ? ',
+    "get_information_success" => "Lấy thông tin người dùng thành công",
+    'logout_success' => "Đăng xuất thành công"
+];

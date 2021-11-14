@@ -1,0 +1,47 @@
+<?php
+return [
+    'success' => 'Get :model data successfully!',
+    'not_found' => ':model not found!',
+    'code_not_found' => ':model not found or out of stock to use!',
+    'code_user' => 'You can\'t use this code!',
+    'code_user_success' => 'Apply discount code success!',
+    'update' => 'Update :model data successfully!',
+    'save' => 'Save :model data successfully!',
+    'delete' => 'Delete :model data successfully!',
+    'upload_success' => 'Upload file successfully!',
+    'upload_fail' => 'Upload file fail!',
+    'login_fail' => 'These credentials do not match our records.',
+    'login_success' => 'Login success!.',
+    'delete_fail' => 'The :model has :relation already.You should make sure that :model does not have :relation',
+    'choose' => "Choose",
+    'barcode' => 'Barcode not found',
+    'error' => 'Something went wrong',
+    'status_error' => 'Error',
+    'status_success' => 'Success',
+    'all' => 'All',
+    'tables' => [
+       'loan' => 'loan'
+    ],
+    'import_success' => 'Import file successfully!',
+    'import_fail' => 'Import file fail!',
+    'create_success' => 'Create data :model successfully',
+    'create_fail' => 'Create data :model fail',
+    'delete_success' => 'Delete data :model successfully',
+    'delete_data_fail' => 'Delete data :model fail',
+    'update_success' => 'Update data :model successfully',
+    'update_fail' => 'Update data :model fail',
+    'roles' => [
+        'customer' => 'customer',
+        'admin_customer' => 'admin customer'
+    ],
+    'active' => 'Active',
+    'no_active' => 'No Active',
+    'menu_header' => 'Menu header',
+    'menu_footer' => 'Menu footer',
+    'is_parent' => 'Parent menu',
+    'have_child' => 'Have Child Parent',
+    "convert_comment_success" => "Convert comment successfully",
+    "cannot_delete" => "Can not delete this role!",
+    "password_old_incorrect" => "Password old incorrect",
+    "password_old_not_enter" => "Password old not enter"
+];
