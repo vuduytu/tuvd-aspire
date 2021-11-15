@@ -1,5 +1,5 @@
 cp .env.example .env
-composer update
+composer install
 
 read -p "Enter your db host(localhost): " db_host
 
@@ -24,8 +24,8 @@ read -p "Enter your database password: " db_pwd
 
 
 echo "$(sed "s+DB_HOST=127.0.0.1+DB_HOST=$db_host+g" .env)" > .env
-echo "$(sed "s+DB_DATABASE=laravel+DB_DATABASE=$db_name+g" .env)" > .env
-echo "$(sed "s+DB_USERNAME=root+DB_USERNAME=$db_user+g" .env)" > .env
+echo "$(sed "s+DB_DATABASE=+DB_DATABASE=$db_name+g" .env)" > .env
+echo "$(sed "s+DB_USERNAME=+DB_USERNAME=$db_user+g" .env)" > .env
 echo "$(sed "s+DB_PASSWORD=+DB_PASSWORD=$db_pwd+g" .env)" > .env
 
 php artisan migrate

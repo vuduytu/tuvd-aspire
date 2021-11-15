@@ -1,0 +1,601 @@
+{
+	"info": {
+		"_postman_id": "16899b1e-397c-476e-a552-86c50e734562",
+		"name": "TuVD-Aspire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Authenticate",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/client/auth/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get auth user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/client/auth/me",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/client/auth/logout",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Request Loan Money",
+					"item": [
+						{
+							"name": "update day of week",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "day",
+											"value": "2",
+											"description": "0: Sun, 1: Mon, 2: Tue, ..., 6: Sat",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/client/loans/1/update_day",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"loans",
+										"1",
+										"update_day"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "payment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "2400000",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/client/loans/1/payment",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"loans",
+										"1",
+										"payment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Request new loan money Copy",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "24000000",
+											"type": "text"
+										},
+										{
+											"key": "terms",
+											"value": "10",
+											"description": "weeks",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/client/loans",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"loans"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get All request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/client/loans",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"loans"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_user}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/client/loans/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"loans",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Authenticate",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "admin",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/admin/auth/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get auth user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/auth/me",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/client/auth/logout",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"client",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Request Loan Money",
+					"item": [
+						{
+							"name": "get All request",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/admin/loans?user_id=2&status=1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"loans"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "2"
+										},
+										{
+											"key": "status",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{local}}/admin/loans/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"loans",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "approve request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/loans/approve/1",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"loans",
+										"approve",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reject request",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token_admin}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/admin/loans/reject/2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"admin",
+										"loans",
+										"reject",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://demo-loan.local/api/v1"
+		},
+		{
+			"key": "token_user",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9kZW1vLWxvYW4ubG9jYWxcL2FwaVwvdjFcL2NsaWVudFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MzY4MTIyMjgsImV4cCI6MTYzNzQxNzAyOCwibmJmIjoxNjM2ODEyMjI4LCJqdGkiOiJiZ3hqOWxtbVhzNUcwczBjIiwic3ViIjoyLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.THhdw6Dl60uTDa-CGKz0fXIqM5OFIwYTOujG-2I7W0g"
+		},
+		{
+			"key": "token_admin",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9kZW1vLWxvYW4ubG9jYWxcL2FwaVwvdjFcL2FkbWluXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzNjgxMzA5MywiZXhwIjoxNjM3NDE3ODkzLCJuYmYiOjE2MzY4MTMwOTMsImp0aSI6IjhNaUhzWHpKWVBBZ3BzdW8iLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NC96MjXG5PViBgCZ5ZjqLKcNMajFp3Qy0BbpQ7fhEOU"
+		}
+	]
+}
