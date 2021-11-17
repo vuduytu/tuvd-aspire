@@ -17,7 +17,7 @@ $router->group(['prefix' => 'api/v1/client'], function ($router) {
         $router->get('/', 'LoanController@index');
         $router->get('/{id}', 'LoanController@show');
         $router->post('/', 'LoanController@create');
-        $router->post('/{id}/update_day', 'LoanController@updateDay');
+        $router->post('/{id}/update_day', 'LoanController@updateDayPayment');
         $router->post('/{id}/payment', 'LoanController@payment');
     });
 });

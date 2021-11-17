@@ -51,5 +51,7 @@ return [
     "status_see" => "Đã xem",
     "status_no_see" => "Chưa xem",
     "thank_you_order" => "Cảm ơn bạn đã quan tâm đến sản phẩm này! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất!",
-    "error_send_phone" => "Bạn đã để lại số điện thoại với sản phẩm này rồi, Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất!"
+    "error_send_phone" => "Bạn đã để lại số điện thoại với sản phẩm này rồi, Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất!",
+    "loan_not_approve" => "Yêu cầu đang không ở trạng thái chấp nhận",
+    "day_of_payment_updated" => "Bạn đã cập nhật ngày thanh toán rồi",
 ];
